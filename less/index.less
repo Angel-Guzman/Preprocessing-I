@@ -4,19 +4,87 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,25 +92,44 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -50,10 +137,159 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	height: 100%;
+	font-size: 62.5%;
+	background-color: #FFFAFA;
 }
 
+/*
+	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto Mono', monospace;
+*/
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Roboto+Mono&display=swap');
+/* resume starts */
+
+/* variables starts */
+@firasans: 'Fira Sans', sans-serif;
+@robotomono: 'Roboto Mono', monospace;
+@fontsizesmall: 1.5rem;
+@fontsizemedium: 2rem;
+@fontsizebig: 3rem;
+@maincolor: black;
+@mediumcolor: #D3D3D3;
+@backgroundcolor: #DCDCDC;
+@mobilefontsizesmall: 1.2rem;
+@mobilefontsizemedium: 1.5rem;
+/* variables ends */
+
+/* mixins starts */
+.flex-center {
+	display: flex;
+	justify-content: center;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: space-evenly;
+}
+
+.height {
+	height: 100%;
+	width: 100%;
+}
+
+.heipth {
+	height: 98%;
+	padding: 1% 1%;
+}
+
+.heipth1 {
+	height: 98%;
+	width: 60%;
+	padding: 1% 1%;
+}
+
+/* mixins ends */
+
+
+/* main-container less starts */
+.main-container {
+	.height();
+	.flex-center();
+	padding: 1%;
+
+	.left-column {
+		.heipth();
+		.flex-column();
+		font-family: @robotomono;
+		color: white;
+		background-color: @maincolor;
+
+	}
+
+	//left column ends
+	nav {
+		.heipth();
+		.flex-column();
+		background-color: @mediumcolor;
+
+	}
+
+	//nav ends
+	.introductionandexperience {
+		.heipth1();
+		.flex-column();
+		background-color: @backgroundcolor;
+		color: @maincolor;
+	}
+	//introductionandexperience ends
+	@media (max-width: 500px) {
+
+		p,
+		li,
+		a {
+			font-size: @mobilefontsizesmall;
+			padding: 1%;
+		}
+		h1,
+		h2,
+		h3 {
+			font-size: @mobilefontsizemedium;
+		}
+		//mobile p, li, a ends
+	}
+
+	//mobile view ends
+}
+
+//container ends
+
+
+//main-container ends
+
+/* element styling starts */
+h1,
+h2,
+h3,
+a {
+	font-family: @robotomono;
+	font-size: @fontsizebig;
+
+}
+
+//h1, h2 end
+
+p {
+	font-family: @firasans;
+	font-size: @fontsizesmall;
+	letter-spacing: 1.5px;
+	width: 90%;
+	color: @maincolor;
+}
+
+//p ends
+
+li {
+	font-size: @fontsizesmall;
+}
+
+//li ends
+
+a {
+	text-decoration: none;
+	font-size: @fontsizemedium;
+	color: @maincolor;
+}
+
+//a ends
+
+
+/* element styling ends */
