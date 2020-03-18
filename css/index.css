@@ -217,13 +217,26 @@ body {
   height: 98%;
   width: 60%;
   padding: 1% 1%;
-  background-color: #DCDCDC;
-  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: space-evenly;
+  background-color: #DCDCDC;
+  color: black;
+}
+@media (max-width: 500px) {
+  .main-container p,
+  .main-container li,
+  .main-container a {
+    font-size: 1.2rem;
+    padding: 1%;
+  }
+  .main-container h1,
+  .main-container h2,
+  .main-container h3 {
+    font-size: 1.5rem;
+  }
 }
 /* element styling starts */
 h1,
@@ -240,12 +253,12 @@ p {
   width: 90%;
   color: black;
 }
+li {
+  font-size: 1.5rem;
+}
 a {
   text-decoration: none;
   font-size: 2rem;
   color: black;
-}
-li {
-  font-size: 1.5rem;
 }
 /* element styling ends */

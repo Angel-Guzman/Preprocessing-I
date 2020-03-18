@@ -163,7 +163,8 @@ body {
 @maincolor: black;
 @mediumcolor: #D3D3D3;
 @backgroundcolor: #DCDCDC;
-
+@mobilefontsizesmall: 1.2rem;
+@mobilefontsizemedium: 1.5rem;
 /* variables ends */
 
 /* mixins starts */
@@ -171,6 +172,7 @@ body {
 	display: flex;
 	justify-content: center;
 }
+
 .flex-column {
 	display: flex;
 	flex-direction: column;
@@ -178,19 +180,23 @@ body {
 	text-align: center;
 	justify-content: space-evenly;
 }
+
 .height {
 	height: 100%;
 	width: 100%;
 }
+
 .heipth {
 	height: 98%;
 	padding: 1% 1%;
 }
+
 .heipth1 {
 	height: 98%;
 	width: 60%;
 	padding: 1% 1%;
 }
+
 /* mixins ends */
 
 
@@ -206,26 +212,48 @@ body {
 		font-family: @robotomono;
 		color: white;
 		background-color: @maincolor;
-		
-	}//left column ends
 
+	}
+
+	//left column ends
 	nav {
 		.heipth();
 		.flex-column();
 		background-color: @mediumcolor;
-	}//nav ends
 
+	}
+
+	//nav ends
 	.introductionandexperience {
 		.heipth1();
+		.flex-column();
 		background-color: @backgroundcolor;
 		color: @maincolor;
-		.flex-column();
-	}//container ends
-}//main-container ends
+	}
+	//introductionandexperience ends
+	@media (max-width: 500px) {
 
-@media (max-width: 500px) {
+		p,
+		li,
+		a {
+			font-size: @mobilefontsizesmall;
+			padding: 1%;
+		}
+		h1,
+		h2,
+		h3 {
+			font-size: @mobilefontsizemedium;
+		}
+		//mobile p, li, a ends
+	}
 
+	//mobile view ends
 }
+
+//container ends
+
+
+//main-container ends
 
 /* element styling starts */
 h1,
@@ -235,7 +263,9 @@ a {
 	font-family: @robotomono;
 	font-size: @fontsizebig;
 
-}//h1, h2 end
+}
+
+//h1, h2 end
 
 p {
 	font-family: @firasans;
@@ -243,15 +273,23 @@ p {
 	letter-spacing: 1.5px;
 	width: 90%;
 	color: @maincolor;
-}//p ends
+}
+
+//p ends
+
+li {
+	font-size: @fontsizesmall;
+}
+
+//li ends
 
 a {
 	text-decoration: none;
 	font-size: @fontsizemedium;
 	color: @maincolor;
-}//a ends
+}
 
-li {
-	font-size: @fontsizesmall;
-}//li ends
+//a ends
+
+
 /* element styling ends */
