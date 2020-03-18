@@ -87,7 +87,7 @@ audio,
 video {
 	margin: 0;
 	padding: 0;
-	border: 1px solid gray;
+	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -143,149 +143,115 @@ table {
 html,
 body {
 	height: 100%;
+	font-size: 62.5%;
+	background-color: #FFFAFA;
 }
 
 /*
 	font-family: 'Roboto', sans-serif;
 	font-family: 'Roboto Mono', monospace;
 */
-
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Roboto+Mono&display=swap');
 /* resume starts */
-@roboto: 'Roboto', sans-serif;
+
+/* variables starts */
+@firasans: 'Fira Sans', sans-serif;
 @robotomono: 'Roboto Mono', monospace;
-@fontsizesmall: 1rem;
-@fontsizebig: 1.7rem;
-@main-color: #A9A9A9;
-@white-color: #ffffff;
-@second-color: #696969;
+@fontsizesmall: 1.5rem;
+@fontsizemedium: 2rem;
+@fontsizebig: 3rem;
+@maincolor: black;
+@mediumcolor: #D3D3D3;
+@backgroundcolor: #DCDCDC;
+
+/* variables ends */
+
+/* mixins starts */
+.flex-center {
+	display: flex;
+	justify-content: center;
+}
+.flex-column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: space-evenly;
+}
+.height {
+	height: 100%;
+	width: 100%;
+}
+.heipth {
+	height: 98%;
+	padding: 1% 1%;
+}
+.heipth1 {
+	height: 98%;
+	width: 60%;
+	padding: 1% 1%;
+}
+/* mixins ends */
 
 
 /* main-container less starts */
-
 .main-container {
-	height: 100%;
-	display: flex;
+	.height();
+	.flex-center();
+	padding: 1%;
 
-	h1,
-	h2,
-	a {
+	.left-column {
+		.heipth();
+		.flex-column();
 		font-family: @robotomono;
-		font-size: @fontsizebig;
-		color: @white-font;
-	}
-
-	//h1, h2 end
-	p {
-		font-family: @roboto;
-		font-size: @fontsizesmall;
-		letter-spacing: 2px;
-
-	}
-
-	//p ends
-}
-
-//main-container ends
-
-.left-column {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	font-family: @robotomono;
-	align-items: center;
-	justify-content: space-evenly;
-	background-color: @main-color;
-
-	.namebox {
-		height: 11%;
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-	}//namebox ends
-
-	
-	.contact {
-		height: 11%;
-		text-align: center;
-		display: flex;
-		align-items: center;
-	}//contact ends
-
-	
-	.skills {
-		height: 20%;
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
+		color: white;
+		background-color: @maincolor;
 		
-	}//skills ends
-}//left-column ends
+	}//left column ends
 
+	nav {
+		.heipth();
+		.flex-column();
+		background-color: @mediumcolor;
+	}//nav ends
 
+	.introductionandexperience {
+		.heipth1();
+		background-color: @backgroundcolor;
+		color: @maincolor;
+		.flex-column();
+	}//container ends
+}//main-container ends
 
-/* nav less starts */
-.container {
-	width: 90%;
+@media (max-width: 500px) {
+
 }
 
-nav {
-	width: 100%;
-	height: 5%;
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
+/* element styling starts */
+h1,
+h2,
+h3,
+a {
 	font-family: @robotomono;
-	background-color: @main-color;
-}
+	font-size: @fontsizebig;
 
-/* nav less ends */
+}//h1, h2 end
 
+p {
+	font-family: @firasans;
+	font-size: @fontsizesmall;
+	letter-spacing: 1.5px;
+	width: 90%;
+	color: @maincolor;
+}//p ends
 
-/* main content top less starts */
-.maincontenttop {
-	height: 60%;
-	width: 95%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-}
+a {
+	text-decoration: none;
+	font-size: @fontsizemedium;
+	color: @maincolor;
+}//a ends
 
-.intro {
-	display: flex;
-	height: 25%;
-	width: 100%;
-	align-items: center;
-	justify-content: center;
-	background-color: pink;
-}
-
-/* main content top less ends */
-
-/* main content bottom less starts */
-.experience {
-	display: flex;
-	height: 70%;
-	width: 100%;
-	align-items: center;
-	justify-content: center;
-	background-color: pink;
-}
-
-.maincontentbottom {
-	height: 100%;
-	width: 95%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-}
-
-.company {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	height: 22%;
-}
-
-/* main content bottom less ends */
+li {
+	font-size: @fontsizesmall;
+}//li ends
+/* element styling ends */

@@ -85,7 +85,7 @@ audio,
 video {
   margin: 0;
   padding: 0;
-  border: 1px solid gray;
+  border: 0;
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
@@ -133,109 +133,119 @@ table {
 html,
 body {
   height: 100%;
+  font-size: 62.5%;
+  background-color: #FFFAFA;
 }
 /*
 	font-family: 'Roboto', sans-serif;
 	font-family: 'Roboto Mono', monospace;
 */
+@font-face {
+  font-family: 'Fira Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Fira Sans Regular'), local('FiraSans-Regular'), url(https://fonts.gstatic.com/s/firasans/v10/va9E4kDNxMZdWfMOD5Vvl4jO.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Roboto Mono'), local('RobotoMono-Regular'), url(https://fonts.gstatic.com/s/robotomono/v7/L0x5DF4xlVMF-BfR8bXMIjhLq3o.ttf) format('truetype');
+}
 /* resume starts */
+/* variables starts */
+/* variables ends */
+/* mixins starts */
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+.height {
+  height: 100%;
+  width: 100%;
+}
+.heipth {
+  height: 98%;
+  padding: 1% 1%;
+}
+.heipth1 {
+  height: 98%;
+  width: 60%;
+  padding: 1% 1%;
+}
+/* mixins ends */
 /* main-container less starts */
 .main-container {
   height: 100%;
+  width: 100%;
   display: flex;
+  justify-content: center;
+  padding: 1%;
 }
-.main-container h1,
-.main-container h2,
-.main-container a {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.7rem;
-  color: #ffffff;
-}
-.main-container p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  letter-spacing: 2px;
-}
-.left-column {
-  height: 100%;
+.main-container .left-column {
+  height: 98%;
+  padding: 1% 1%;
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto Mono', monospace;
   align-items: center;
-  justify-content: space-evenly;
-  background-color: #A9A9A9;
-}
-.left-column .namebox {
-  height: 11%;
   text-align: center;
+  justify-content: space-evenly;
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+  background-color: black;
+}
+.main-container nav {
+  height: 98%;
+  padding: 1% 1%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-}
-.left-column .contact {
-  height: 11%;
-  text-align: center;
-  display: flex;
   align-items: center;
-}
-.left-column .skills {
-  height: 20%;
   text-align: center;
+  justify-content: space-evenly;
+  background-color: #D3D3D3;
+}
+.main-container .introductionandexperience {
+  height: 98%;
+  width: 60%;
+  padding: 1% 1%;
+  background-color: #DCDCDC;
+  color: black;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   justify-content: space-evenly;
 }
-/* nav less starts */
-.container {
+/* element styling starts */
+h1,
+h2,
+h3,
+a {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 3rem;
+}
+p {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
   width: 90%;
+  color: black;
 }
-nav {
-  width: 100%;
-  height: 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  font-family: 'Roboto Mono', monospace;
-  background-color: #A9A9A9;
+a {
+  text-decoration: none;
+  font-size: 2rem;
+  color: black;
 }
-/* nav less ends */
-/* main content top less starts */
-.maincontenttop {
-  height: 60%;
-  width: 95%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+li {
+  font-size: 1.5rem;
 }
-.intro {
-  display: flex;
-  height: 25%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  background-color: #DCDCDC;
-}
-/* main content top less ends */
-/* main content bottom less starts */
-.experience {
-  display: flex;
-  height: 70%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  background-color: #DCDCDC;
-}
-.maincontentbottom {
-  height: 100%;
-  width: 95%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-.company {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 22%;
-}
-/* main content bottom less ends */
+/* element styling ends */
