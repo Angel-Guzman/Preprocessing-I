@@ -139,38 +139,52 @@ body {
 	font-family: 'Roboto Mono', monospace;
 */
 /* resume starts */
-/* body less starts */
-body {
+/* main-container less starts */
+.main-container {
+  height: 100%;
   display: flex;
 }
-body .left-column {
-  height: 90%;
+.main-container h1,
+.main-container h2,
+.main-container a {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.7rem;
+  color: #ffffff;
+}
+.main-container p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+.left-column {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #A9A9A9;
 }
-/* body less ends */
-/* left column less starts */
-.namebox {
+.left-column .namebox {
   height: 11%;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.contact {
-  height: 30%;
+.left-column .contact {
+  height: 11%;
   text-align: center;
   display: flex;
   align-items: center;
 }
-.skills {
+.left-column .skills {
+  height: 20%;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-/* left column less ends */
 /* nav less starts */
 .container {
   width: 90%;
@@ -182,6 +196,7 @@ nav {
   align-items: center;
   justify-content: space-around;
   font-family: 'Roboto Mono', monospace;
+  background-color: #A9A9A9;
 }
 /* nav less ends */
 /* main content top less starts */
@@ -198,6 +213,7 @@ nav {
   width: 100%;
   align-items: center;
   justify-content: center;
+  background-color: #DCDCDC;
 }
 /* main content top less ends */
 /* main content bottom less starts */
@@ -207,6 +223,7 @@ nav {
   width: 100%;
   align-items: center;
   justify-content: center;
+  background-color: #DCDCDC;
 }
 .maincontentbottom {
   height: 100%;
@@ -214,5 +231,11 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+.company {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 22%;
 }
 /* main content bottom less ends */
